@@ -98,7 +98,7 @@ to Wiresharks's 'extcaps' directory.
 
 .NET projects commonly compile to several different files (dlls, exe, config, ...) and copying all  
 of those to the directory might make a mess.  
-Luckily, .NET core/.NET 5 support [single-file publishing](https://docs.microsoft.com/en-us/dotnet/core/deploying/single-file) which produces only 2 files: `program.exe` and `program.pdb` (A symbols file. Not necessary for execution).  
+Luckily, .NET core 3.1 supports [single-file publishing](https://docs.microsoft.com/en-us/dotnet/core/deploying/single-file) which produces only 2 files: `program.exe` and `program.pdb` (A symbols file. Not necessary for execution).  
 To publish a single file you can use this command in Visual Studio's "Package Manager Console":  
 ```
 PM> dotnet publish -r win-x64 -c Debug /p:PublishSingleFile=true
