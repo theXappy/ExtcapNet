@@ -1,7 +1,7 @@
 ## Configuration Fields
 
 Let's add the missing features we specified before to make our "Fake udpdump" more like `udpdump.exe`.  
-(A note anout 'EXPORT_PDU' follows)
+(A note about 'EXPORT_PDU' follows)
 ```C#
 private const string PORT_CONFIG_NAME = "Port";
 private const string PAYLOAD_TYPE_CONFIG_NAME = "Payload_type";
