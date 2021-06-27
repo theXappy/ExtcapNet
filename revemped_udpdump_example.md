@@ -66,8 +66,8 @@ private static void FakeUdpDumpProducer(Dictionary<ConfigField, string> configur
 The **'EXPORT_PDU'** layer is used to wrap payloads for wireshark.  
 Notably it is used by the real `udpdump` to wrap the payloads it recieved so Wireshark knows what dissector to call.  
 This layer supports adding several "tags" (in the format of TLV). One of those tags (as used above) specifies the encapsulated payload protocol as a string.  
-In case you wondered why this pseudo-layer is used in this example instead of registering the desired protocol in the "`defaultLinkLayer`" argument  
-(when registering the interface) it is done because the "`defaultLinkLayer`" is queried by Wireshark from the extcap plugin (whether it is  
+In case you wondered why this pseudo-layer is used in this example instead of registering the desired protocol in the "`defaultLinkLayer`" argument 
+(when registering the interface), it is done because the "`defaultLinkLayer`" is queried by Wireshark from the extcap plugin (whether it is  
 `udpdump` or our example) _before_ the configuration is shown to, and set by, the user.
 
 The available configuration field types are:
