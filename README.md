@@ -1,13 +1,15 @@
 ![icon](https://raw.githubusercontent.com/theXappy/ExtcapNet/main/media/icon.png)
 # ExtcapNet
+[![NuGet][nuget-image]][nuget-link]
+
 A small .NET standard library that implements the [extcap interface](https://www.wireshark.org/docs/man-pages/extcap.html) for you.
 
 ## How to include ExtcapNet in your project
 There are 2 ways to add the ExtcapNet library to your project:
 
-1. Get it [from NuGet](https://www.nuget.org/packages/ExtcapNet/)\
-or
-2. Download the code in this repo and add the ExtcapNet project (.csproj) to your solution
+1. Get it [from NuGet][nuget-link]\
+-or-
+2. Download the code and add the ExtcapNet project (.csproj) to your solution
 
 
 ## Quick Start
@@ -107,3 +109,6 @@ PM> dotnet publish -r win-x64 -c Debug /p:PublishSingleFile=true
 
 ## Thanks
 Shark, Puzzle icons icon by [Icons8](https://icons8.com/)
+
+[nuget-image]: https://img.shields.io/nuget/v/ExtcapNet
+[nuget-link]: https://www.nuget.org/packages/ExtcapNet/
