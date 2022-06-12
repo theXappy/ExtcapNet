@@ -85,7 +85,7 @@ static void FakeUdpDumpProducer(Dictionary<ConfigField, string> config, IPackets
 ```
 This example works but it is not a complete copy. `udpdump` has a few more features which we are lacking.  
 For example, you can specify in the `udpdump`'s settings on which *port to listen*.  
-You can also specify the *encapsulated protocol type* so it's dissector will be called by Wireshark.
+You can also specify the *encapsulated protocol type* so its dissector will be called by Wireshark.
 
 To allow such flexability in ExtcapNet a deeper dive into the library is required.  
 ExtcapNet allows you to define **"configuration fields"** which Wireshark will render in  
