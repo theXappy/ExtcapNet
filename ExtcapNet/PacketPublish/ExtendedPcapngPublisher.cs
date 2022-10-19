@@ -27,7 +27,7 @@ namespace ExtcapNet.PacketPublish
             //Adding default iface
             _defaultInterfaceId = ifaceId;
             _linkLayerToIfaceId[defaultLinkLayer] = ifaceId;
-            ifacesDescsList.Add(new InterfaceDescriptionBlock((LinkTypes)defaultLinkLayer, 8192, new InterfaceDescriptionOption()));
+            ifacesDescsList.Add(new InterfaceDescriptionBlock((LinkTypes)defaultLinkLayer, 0, new InterfaceDescriptionOption()));
             ifaceId++;
 
             // Here's a trick to support subsequent link layers: We're declaring new 'interfaces' in the PCAPNG format
@@ -37,7 +37,7 @@ namespace ExtcapNet.PacketPublish
             foreach (var additionalLinkLayer in additionalLinkLayers)
             {
                 _linkLayerToIfaceId[additionalLinkLayer] = ifaceId;
-                ifacesDescsList.Add(new InterfaceDescriptionBlock((LinkTypes)additionalLinkLayer, 8192, new InterfaceDescriptionOption()));
+                ifacesDescsList.Add(new InterfaceDescriptionBlock((LinkTypes)additionalLinkLayer, 0, new InterfaceDescriptionOption()));
                 ifaceId++;
             }
 
