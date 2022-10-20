@@ -49,24 +49,27 @@ namespace ExtcapNet.PacketPublish
 
         private void SendInner(byte[] data, int ifaceId, TimestampHelper ts, string comment)
         {
-            _writer.WritePacket(new EnhancedPacketBlock(ifaceId, ts, data.Length, data, new EnhancedPacketOption(Comment: comment)));
+            List<string> comments = new List<string>();
+            if(comments != null) 
+                comments.Add(comment);
+            _writer.WritePacket(new EnhancedPacketBlock(ifaceId, ts, data.Length, data, new EnhancedPacketOption(comments)));
         }
 
         public void Send(byte[] data)
         {
             var ts = new TimeSpan();
-            SendInner(data,_defaultInterfaceId, new TimestampHelper((uint)ts.Seconds,(uint)(ts.Milliseconds * 1000)),null);
+            SendInner(data, _defaultInterfaceId, new TimestampHelper((uint)ts.Seconds, (uint)(ts.Milliseconds * 1000)), null);
         }
 
 
         public void Send(byte[] data, LinkLayerType linkLayer)
         {
             if (!_linkLayerToIfaceId.TryGetValue(linkLayer, out var ifaceId))
-                    throw new ArgumentOutOfRangeException(
-                        $"A packet with unfamiliar link layer was passed to {nameof(ExtendedPcapngPublisher)} in Send(...). " +
-                                $"Send argument Link Layer: {linkLayer}");
+                throw new ArgumentOutOfRangeException(
+                    $"A packet with unfamiliar link layer was passed to {nameof(ExtendedPcapngPublisher)} in Send(...). " +
+                            $"Send argument Link Layer: {linkLayer}");
             var ts = new TimeSpan();
-            SendInner(data, ifaceId, new TimestampHelper((uint)ts.Seconds,(uint)(ts.Milliseconds * 1000)),null);
+            SendInner(data, ifaceId, new TimestampHelper((uint)ts.Seconds, (uint)(ts.Milliseconds * 1000)), null);
         }
 
         public void Send(PacketToSend pkt)
