@@ -49,10 +49,10 @@ namespace ExtcapNet.PacketPublish
 
         private void SendInner(byte[] data, int ifaceId, TimestampHelper ts, string comment)
         {
-            List<string> comments = new List<string>();
-            if(comments != null) 
-                comments.Add(comment);
-            _writer.WritePacket(new EnhancedPacketBlock(ifaceId, ts, data.Length, data, new EnhancedPacketOption(comments)));
+            List<string> commentsList = new List<string>();
+            if(comment != null) 
+                commentsList.Add(comment);
+            _writer.WritePacket(new EnhancedPacketBlock(ifaceId, ts, data.Length, data, new EnhancedPacketOption(commentsList)));
         }
 
         public void Send(byte[] data)
