@@ -91,7 +91,7 @@ To allow such flexability in ExtcapNet a deeper dive into the library is require
 ExtcapNet allows you to define **"configuration fields"** which Wireshark will render in  
 a special window for the users to configure the plugin (Like the ones udpdump and sshdump have).
 
-To learn about configuration support, see the ['revemped udpdump example'](https://github.com/theXappy/ExtcapNet/blob/main/revemped_udpdump_example.md)
+To learn about configuration support, see the ['revamped udpdump example'](https://github.com/theXappy/ExtcapNet/blob/main/revamped_udpdump_example.md)
 
 ## Compiling a single .exe (optional)
 After you're done developing your plugin you'd want to use it in Wireshark.  
