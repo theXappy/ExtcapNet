@@ -13,7 +13,7 @@ There are 2 ways to add the ExtcapNet library to your project:
 
 
 ## Quick Start
-To use the extcap interface you'll need to use the `ExtcapManager` class and it's 2 methods:
+To use the extcap interface you'll need to use the `ExtcapManager` class and its 2 methods:
 1. `ExtcapManager.RegisterInterface()` - To add one or more capturable interfaces to Wireshark's list
 2. `ExtcapManager.Run()` - To perform the necessary API communication with Wireshark*
 
